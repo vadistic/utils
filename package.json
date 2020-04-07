@@ -1,38 +1,35 @@
 {
-  "name": "workspace",
+  "name": "@vadistic/monorepo",
+  "version": "0.2.0",
   "private": true,
-  "description": "Personal @vadistic workspace utils",
+  "description": "TODO",
   "homepage": "https://vadistic.netlify.com",
   "repository": {
     "type": "git",
-    "url": "https://github.com/vadistic/workspace"
+    "url": "https://github.com/vadistic/x"
+  },
+  "workspaces": {
+    "packages": [
+      "packages/*"
+    ]
   },
   "license": "MIT",
   "author": "Jakub Wadas <vadistic@gmail.com>",
-  "workspaces": [
-    "configs/*",
-    "fixtures/*",
-    "scripts"
-  ],
   "scripts": {
-    "build": "lerna run --ignore @vadistic/fixture-monorepo build ",
-    "clean": "lerna run --ignore @vadistic/fixture-monorepo clean",
-    "format": "lerna run --ignore @vadistic/fixture-monorepo format",
-    "lint": "lerna run --ignore @vadistic/fixture-monorepo lint",
-    "prepublishOnly": "yarn sync && yarn clean && yarn format && yarn lint && yarn build",
-    "sync:dotfiles": "sh scripts/copy-dotfiles.sh",
-    "sync:pkg": "lerna exec 'task sync-pkg'",
-    "sync": "yarn sync:dotfiles && yarn sync:pkg"
+    "build": "lerna run build",
+    "clean": "lerna run clean",
+    "format": "lerna run format",
+    "lint": "lerna run lint",
+    "bump": "ncu -u && lerna exec 'ncu -u'"
   },
-  "dependencies": {},
   "devDependencies": {
-    "@vadistic/eslint-config-base": "0.1.8",
-    "@vadistic/prettier-config": "0.1.8",
+    "@vadistic/eslint-config-base": "^0.2.2",
+    "@vadistic/prettier-config": "^0.2.2",
+    "@vadistic/scripts": "^0.2.0",
     "eslint": "^6.8.0",
+    "jest": "^25.2.7",
     "lerna": "^3.20.2",
-    "npm-check-updates": "^4.1.0",
-    "prettier": "^1.19.1",
-    "ts-node": "^8.7.0",
+    "prettier": "^2.0.4",
     "typescript": "^3.8.3"
   }
 }

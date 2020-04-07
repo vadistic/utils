@@ -1,16 +1,24 @@
-# @vadistic/workspace
+# @vadistic/monorepo
 
-> Personal @vadistic workspace utils - scaffolding & configs for react & node monorepos with typescript
-
-Inspired by https://github.com/microsoft/just & https://github.com/nrwl/nx
+> Personal @vadistic monorepo template - configs for react & node monorepos with typescript
 
 ## Why
 
-- I kind of like having monorepos of tiny packages for everything
-- No-config tools like tsdx or cra are not configurable enough...
-- Buying into @nrwl/nx is just too much & I'm not a fan of angular repo style
+- I kinda like creating monorepos of tiny packages for everything
+- No-config tools like parcel, tsdx or cra are not configurable enough...
+- It actually saves time to have one source of "configuration truth"
 - I guess I like configs 🤷
 
-## Idea how to make it more or less sane?
+## Usage
 
-- Not yet.
+```sh
+
+# clone whole thing
+
+$ git clone https://github.com/vadistic/monorepo
+
+# or just package you need
+
+$ npx degit https://github.com/vadistic/monorepo/parcel-app
+
+```
